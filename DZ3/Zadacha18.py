@@ -9,13 +9,25 @@
 #6 - заданное число
 #-> 5 - ближайшее число
 
+# Код не работает пока. Я переделаю =)
+
 import random
 print('введите количество элементов массива -  ')
 N = int(input())
 Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
+Array.sort() # сортируем по увеличению список
 print('число, которое ищем в массиве -  ')
 X = int(input())
-for i in range(N):
-    if X == Array[i]:
-        i += 1
-print(f'Указанное число встречается в массиве {count} раз')
+
+if len(Array) < X:
+    print(f'{Array[-1]}')
+else:
+    min = X - Array[0]
+    i = 0
+    for j in range(1,N):
+        count = X - Array[j]
+        if count < min:
+            min = count
+            i = j
+    print(f'Ближайшее число равно {Array[i]} ')
+    print(f'{Array}')       
