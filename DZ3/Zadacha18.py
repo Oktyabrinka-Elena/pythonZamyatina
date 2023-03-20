@@ -14,7 +14,8 @@
 import random
 print('введите количество элементов массива -  ')
 N = int(input())
-Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
+Array = [random.randint(0, 99) for _ in range(N)]    #создаём массив
+Array.sort() #сортируем массив
 print(Array) #для проверки с результатом
 if len(Array) != N:
     print('Введенные элементы не соответствуют заявленному количеству!')
