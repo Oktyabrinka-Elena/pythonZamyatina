@@ -11,19 +11,14 @@
 # -> 1 - количество совпадений
 
 import random
+print('введите количество элементов массива -  ')
 N = int(input())
-Array = [random.randint(0, 99) for _ in range(N)]    #создаём массив
-
-# Orel = [] # количество орлов
-# Reshka = [] #количество решек
-# for num in Monetki_vsego:
-#     if num == 1:
-#         Orel.append(num)
-#     else:
-#         Reshka.append(num)
-# if len(Orel) < len(Reshka):
-#     print(f'Нужно перевернуть Орлом вниз {len(Orel)} раз')
-# elif len(Orel) == len(Reshka):
-#     print(f'Количество орлов и решек одинаково')
-# else:
-#     print(f'Нужно перевернуть Решкой вниз {len(Reshka)} раз')
+Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
+print('число, которое ищем в массиве -  ')
+Ai = int(input())
+X = 0
+for i in range(N):
+    if Ai == Array[i]:
+        X += 1
+print(f'Указанное число встречается в массиве {X} раз')
+print(Array) #массив для проверки
