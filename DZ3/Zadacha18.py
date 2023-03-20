@@ -15,23 +15,16 @@ import random
 print('введите количество элементов массива -  ')
 N = int(input())
 Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
-Array.sort() # сортируем по увеличению список
-print('число, которое ищем в массиве -  ')
-X = int(input())
-min = Array[0]
-max = Array[-1]
-for i in range(N):
-    if X <= min:
-        print (f'ближайшее минимальное равно {min}')
-    elif X >= max:
-        print (f'ближайшее максимальное равно {max}')
-    else:
-        min = X - Array[0]
-        index = 0
-        for i in range(N):
-            count = X - Array[i]
-            if count < min:
-                min = count
-                index = i
-        print(f'Число {Array[index]} в списке A наиболее близко по величине к числу {X}, их разница составляет {abs(X - Array[index])}')
-print(Array)
+print(Array) #для проверки с результатом
+if len(Array) != N or N == 0:
+    print('Введенные элементы не соответствуют заявленному количеству!')
+else:
+    X = int(input('Введите число X, с которым необходимо сравнивать элементы списка: '))
+    min = abs(X - Array[0])
+    index = 0
+    for i in range(1, N):
+        count = abs(X - Array[i])
+        if count < min:
+            min = count
+            index = i
+    print(f'Число {Array[index]} в списке ближайшее к числу {X}, их разница равна {abs(X - Array[index])}')
