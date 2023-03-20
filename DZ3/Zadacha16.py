@@ -15,10 +15,10 @@ print('введите количество элементов массива -  
 N = int(input())
 Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
 print('число, которое ищем в массиве -  ')
-Ai = int(input())
-X = 0
+X = int(input())
+count = 0
 for i in range(N):
-    if Ai == Array[i]:
-        X += 1
-print(f'Указанное число встречается в массиве {X} раз')
+    if X == Array[i]:
+        count += 1
+print(f'Указанное число встречается в массиве {count} раз')
 print(Array) #массив для проверки
