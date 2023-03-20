@@ -14,5 +14,8 @@ print('введите количество элементов массива -  
 N = int(input())
 Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
 print('число, которое ищем в массиве -  ')
-Ai = int(input())
-
+X = int(input())
+for i in range(N):
+    if X == Array[i]:
+        i += 1
+print(f'Указанное число встречается в массиве {count} раз')
