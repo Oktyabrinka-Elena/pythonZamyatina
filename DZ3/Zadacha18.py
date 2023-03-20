@@ -14,7 +14,7 @@
 import random
 print('введите количество элементов массива -  ')
 N = int(input())
-Array = [random.randint(-9, 9) for _ in range(N)]    #создаём массив
+Array = [random.randint(0, 9) for _ in range(N)]    #создаём массив
 Array.sort() # сортируем по увеличению список
 print('число, которое ищем в массиве -  ')
 X = int(input())
