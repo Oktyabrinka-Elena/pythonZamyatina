@@ -13,9 +13,9 @@ print('Введите текст кричалки')
 text = input() # ВВОДИМ ТЕКСТ КРИЧАЛКИ
 un_text = text.lower().split() #ПЕРЕВОДИМ ТЕКСТ КРИЧАЛКИ В ЕДИНООБРАЗНОЕ ЗНАЧЕНИЕ
 func = lambda x: sum(1 for i in x if i in 'аеёиоуыэюя')
-t = func(un_text[0])
+tolk = func(un_text[0])
 
-if all([func(i) == t for i in un_text]):
+if all([func(i) == tolk for i in un_text]):
     print('Парам пам-пам')
 else:
     print('Пам парам')
