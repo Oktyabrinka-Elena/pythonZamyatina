@@ -20,6 +20,3 @@
 # filtered_list =  filtered_list #.split()
 
 # print(filtered_list)
-
-a = 15
-print(a)
