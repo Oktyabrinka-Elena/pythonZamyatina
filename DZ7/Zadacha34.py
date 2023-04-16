@@ -9,14 +9,21 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 # **Вывод:** Парам пам-пам  
 
+print('Введите текст кричалки') 
+text = input() # ВВОДИМ ТЕКСТ КРИЧАЛКИ
+un_text = text.lower().split() #ПЕРЕВОДИМ ТЕКСТ КРИЧАЛКИ В ЕДИНООБРАЗНОЕ ЗНАЧЕНИЕ
+func = lambda x: sum(1 for i in x if i in 'аеёиоуыэюя')
+t = func(un_text[0])
+
+if all([func(i) == t for i in un_text]):
+    print('Парам пам-пам')
+else:
+    print('Пам парам')
+
+
 # print('Введите текст кричалки') # ВВОДИМ ТЕКСТ КРИЧАЛКИ
-# list = input().split(',')
+# list = input()#.split('\n')
 # new_list = [x.upper() for x in list] #ПЕРЕВОДИМ ТЕКСТ КРИЧАЛКИ В ЕДИНООБРАЗНОЕ ЗНАЧЕНИЕ
-
-# # temp = ['Б', 'В', 'Г','Д','Ж','З','Й','К','Л','М','Н','П','Р','С','Т','Ф','Х','Ц','Ч','Ш','Щ']
-# temp = ['БВГДЖЗЙКЛМНПРСТФХЦЧШЩ']
-
+# temp = ['Б', 'В', 'Г','Д','Ж','З','Й','К','Л','М','Н','П','Р','С','Т','Ф','Х','Ц','Ч','Ш','Щ']
 # filtered_list = ' '.join((filter(lambda s: s not in temp, new_list)))
-# filtered_list =  filtered_list #.split()
-
-# print(filtered_list)
+# print(filtered_list)   
