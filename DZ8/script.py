@@ -30,9 +30,87 @@ def input_data():
             file.write(f'{name};{surname};{phone};{address}')
 
 def print_data():
-    pass
+    print('Вывожу данные из 1го файла \n')
+    with open('data_first_variant.csv', 'r', encoding='utf-8') as file:
+        data_first = file.readlines()
+        # data_first_version_second = []
+        # j = 0
+        # for i in range(len(data_first)):
+        #     if data_first[i] == '\n' or i == len(data_first) - 1:
+        #         data_first_version_second.append(''.join(data_first[j:i+1])) 
+        #         j = i
+        # data_first = data_first_version_second
+        # print(''.join(data_first))
+        print(*data_first, sep=') 
+
+def put_data():
+    print('Из какого файла Вы хотите изменить данные?')
+    data_first, data_second = print_data()
+    number_file = int(input('Введите номер файла: '))
+
+    while number_file != 1 and number_file != 2:
+        print('Ты дурак?! Даю тебе последний шанс')
+        number_file = int(input('Введите номер файла: '))
+
+    if number_file == 1:  # Можно сделать нумерацию внутри файла
+        print("Какую именно запись по счету Вы хотите изменить?")
+        number_journal = int(input('Введите номер записи: '))
+
+        # ТУТ НАПИСАТЬ КОД
+        # Можно добавить проверку, чтобы человек не выходил за пределы записей
+        print(f'Изменить данную запись\n{data_first[number_journal]}')
+        name = name_data()
+        surname = surname_data()
+        phone = phone_data()
+        address = address_data()
+        data_first = data_first[:number_journal] + [f'{name}\n{surname}\n{phone}\n{address}\n'] + \
+                     data_first[number_journal + 1:]
+        with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_first))
+        print('Изменения успешно сохранены!')
+    else:
+        print("Какую именно запись по счету Вы хотите изменить?")
+        number_journal = int(input('Введите номер записи: '))
+        # ТУТ НАПИСАТЬ КОД
+        # Можно добавить проверку, чтобы человек не выходил за пределы записи
+        print(f'Изменить данную запись\n{data_second[number_journal]}')
+        name = name_data()
+        surname = surname_data()
+        phone = phone_data()
+        address = address_data()
+        data_second = data_second[:number_journal] + [f'{name};{surname};{phone};{address}\n'] + \
+                      data_second[number_journal + 1:]
+        with open('data_second_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_second))
+        print('Изменения успешно сохранены!')  # Можно вывести конечные данные
+
 
 def delete_data():
-    pass
-def put_data():
-    pass
+    print('Из какого файла Вы хотите удалить данные?')
+    data_first, data_second = print_data()
+    number_file = int(input('Введите номер файла: '))
+
+    while number_file != 1 and number_file != 2:
+        print('Ты дурак?! Даю тебе последний шанс')
+        number_file = int(input('Введите номер файла: '))
+
+    if number_file == 1:  # Можно сделать нумерацию внутри файла
+        print("Какую именно запись по счету Вы хотите удалить?")
+        number_journal = int(input('Введите номер записи: '))
+        # Можно добавить проверку, чтобы человек не выходил за пределы записи
+        # ТУТ НАПИСАТЬ КОД
+        print(f'Удалить данную запись\n{data_first[number_journal - 1]}')
+        data_first = data_first[:number_journal] + data_first[number_journal + 1:]
+        with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_first))
+        print('Изменения успешно сохранены!')
+    else:
+        print("Какую именно запись по счету Вы хотите удалить?")
+        number_journal = int(input('Введите номер записи: '))
+        # Можно добавить проверку, чтобы человек не выходил за пределы записи
+        # ТУТ НАПИСАТЬ КОД
+        print(f'Удалить данную запись\n{data_second[number_journal - 1]}')
+        data_second = data_second[:number_journal] + data_second[number_journal + 1:]
+        with open('data_second_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_second))
+        print('Изменения успешно сохранены!')  # Можно вывести конечные данные
