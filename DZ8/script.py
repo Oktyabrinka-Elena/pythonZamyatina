@@ -28,3 +28,11 @@ def input_data():
     else:
         with open('data_second_variant.csv', 'a', encoding='utf-8') as file:
             file.write(f'{name};{surname};{phone};{address}')
+
+def print_data():
+    pass
+
+def delete_data():
+    pass
+def put_data():
+    pass
