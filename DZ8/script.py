@@ -41,7 +41,7 @@ def print_data():
         #         j = i
         # data_first = data_first_version_second
         # print(''.join(data_first))
-        print(*data_first, sep=') 
+        print(*data_first, sep='') 
 
 def put_data():
     print('Из какого файла Вы хотите изменить данные?')
